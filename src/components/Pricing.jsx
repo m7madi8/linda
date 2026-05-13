@@ -51,11 +51,13 @@ export default function Pricing() {
               <h3 className="text-2xl font-black">{plan.name}</h3>
               <p className="mt-7 text-4xl font-black text-pink">{plan.monthly}</p>
               <p className="mt-3 min-h-8 text-base font-bold text-black/60">{plan.term}</p>
-              <ul className="mt-7 space-y-3 text-sm font-bold text-black/60">
-                <li>مجموعة نسائية داعمة</li>
-                <li>قوة، حرق، ولياقة</li>
-                <li>تسجيل سريع</li>
-              </ul>
+              <div className="flex flex-1 flex-col">
+                <ul className="mt-7 space-y-3 pb-8 text-sm font-bold text-black/60">
+                  <li>مجموعة نسائية داعمة</li>
+                  <li>قوة، حرق، ولياقة</li>
+                  <li>تسجيل سريع</li>
+                </ul>
+              </div>
               <a
                 href={whatsappUrl}
                 target="_blank"

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { phoneDisplay, whatsappUrl } from '../App.jsx';
+import { whatsappUrl } from '../App.jsx';
 import logoWhite from '../../logo-white.png';
 
 export default function CTA() {
@@ -37,7 +37,6 @@ export default function CTA() {
               واتساب الآن
             </a>
           </div>
-          <p className="mt-8 text-3xl font-black tracking-wide">{phoneDisplay}</p>
         </motion.div>
       </div>
     </section>

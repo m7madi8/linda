@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Heebo:wght@400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,6 +7,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scrollbar-color: #e91e8c #0d0d0d;
+    scrollbar-width: thin;
   }
 
   body {
@@ -23,6 +25,24 @@
   ::selection {
     background: #e91e8c;
     color: #ffffff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0d0d0d;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #e91e8c, #c2185b);
+    border: 3px solid #0d0d0d;
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e91e8c;
   }
 
   button,
@@ -42,7 +62,7 @@
   }
 
   .section-padding {
-    @apply py-20 sm:py-24 lg:py-28;
+    @apply py-16 sm:py-20 lg:py-24;
   }
 
   .glass-dark {
@@ -51,5 +71,14 @@
 
   .glass-light {
     @apply border border-white/70 bg-white/80 shadow-xl backdrop-blur-xl;
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
   }
 }

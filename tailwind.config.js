@@ -16,7 +16,7 @@ export default {
       },
       fontFamily: {
         cairo: ['Cairo', 'sans-serif'],
-        heebo: ['Heebo', 'sans-serif'],
+        heebo: ['Assistant', 'sans-serif'],
       },
       boxShadow: {
         glow: '0 20px 60px rgba(233, 30, 140, 0.28)',

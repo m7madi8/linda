@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { phoneDisplay, whatsappUrl } from '../App.jsx';
+import { whatsappUrl } from '../App.jsx';
 
 const container = {
   hidden: { opacity: 0 },
@@ -73,7 +73,7 @@ export default function Hero() {
             <span className="block text-pink">YOUR BODY</span>
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="mt-7 max-w-xl text-lg leading-8 text-white/72 sm:text-xl">
+          <motion.p variants={fadeUp} className="mt-7 max-w-xl text-lg leading-8 text-white/70 sm:text-xl">
             تدريب نسائي قوي مع ليندا غانم وكوثر غانم. شد، حرق، طاقة، ونتائج من أول حصة.
           </motion.p>
 
@@ -139,9 +139,8 @@ export default function Hero() {
                 ))}
               </div>
 
-              <div className="mt-6 rounded-3xl border border-pink/30 bg-pink/10 p-5">
-                <p className="text-sm font-bold text-white/60">سجلي الآن</p>
-                <p className="mt-1 text-3xl font-black tracking-wide">{phoneDisplay}</p>
+              <div className="mt-6 rounded-3xl border border-pink/30 bg-pink/10 p-5 text-center">
+                <p className="text-lg font-black text-white">سجلي الآن وابدئي أول حصة</p>
               </div>
             </div>
           </div>
