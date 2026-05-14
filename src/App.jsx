@@ -1,4 +1,7 @@
+import { useEffect, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar.jsx';
+import Loader from './components/Loader.jsx';
 import Hero from './components/Hero.jsx';
 import TrainersIntro from './components/TrainersIntro.jsx';
 import Classes from './components/Classes.jsx';
@@ -15,8 +18,24 @@ export const instagramUrl = 'https://www.instagram.com/shape_up_by_linda';
 export const phoneDisplay = '052-3369262';
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    const timeout = window.setTimeout(() => {
+      setIsLoading(false);
+      document.body.style.overflow = '';
+    }, 1800);
+
+    return () => {
+      window.clearTimeout(timeout);
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   return (
     <div dir="rtl" className="min-h-screen overflow-hidden bg-white font-cairo text-ink">
+      <AnimatePresence>{isLoading && <Loader />}</AnimatePresence>
       <Navbar />
       <main>
         <Hero />
