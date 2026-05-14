@@ -1,5 +1,5 @@
 import { instagramUrl, whatsappUrl } from '../App.jsx';
-import logoWhite from '../../logo-white.png';
+import logoWhite from '../../logo-white-1.png';
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex items-center gap-4">
           <img src={logoWhite} alt="Shape Up by Linda" className="h-20 w-auto object-contain" />
           <div>
-            <p className="text-lg font-black tracking-wide">SHAPE UP by Linda</p>
+            <p className="text-lg font-black tracking-wide">SHAPE UP</p>
             <p className="text-sm font-bold text-pink-light">Sculpture Your Body</p>
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function Footer() {
       </div>
 
       <div className="container-page mt-8 border-t border-white/10 pt-8 text-sm font-semibold text-white/50">
-        © {new Date().getFullYear()} Shape Up by Linda. All rights reserved.
+        © {new Date().getFullYear()} Shape Up. All rights reserved.
       </div>
     </footer>
   );
