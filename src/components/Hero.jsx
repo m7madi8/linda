@@ -150,14 +150,13 @@ function StudioCard() {
           ))}
         </div>
 
-        <div className="mt-6 space-y-2.5">
-          <Link
+        <Link
             to="schedule"
             smooth
             duration={650}
             offset={-80}
-            className="group flex cursor-pointer items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3.5 text-sm font-black text-white transition hover:border-pink/30 hover:bg-white/[0.09]"
-          >
+            className="group mt-6 flex cursor-pointer items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3.5 text-sm font-black text-white transition hover:border-pink/30 hover:bg-white/[0.09]"
+        >
             <span className="flex items-center gap-2.5">
               <span className="grid h-9 w-9 place-items-center rounded-xl border border-white/10 bg-pink/15 text-pink-light transition group-hover:bg-pink group-hover:text-white">
                 <IconCalendar />
@@ -170,12 +169,7 @@ function StudioCard() {
             <span className="text-white/50 transition group-hover:translate-x-[-3px] group-hover:text-pink-light">
               <IconArrow />
             </span>
-          </Link>
-
-          <BookLink className="flex items-center justify-center rounded-2xl bg-pink px-5 py-4 text-center font-black text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-pink-dark hover:shadow-glow-lg">
-            احجزي من الموقع
-          </BookLink>
-        </div>
+        </Link>
       </div>
     </div>
   );
