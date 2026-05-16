@@ -1,17 +1,16 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { dashboardUrl } from '../App.jsx';
 
 const steps = [
-  { num: '01', title: 'اختاري الخطة', text: 'اشتراك أو دخول حر' },
+  { num: '01', title: 'اختاري الخطة', text: 'اشتراك أو برنامج معيّن' },
   { num: '02', title: 'اختاري الحصة', text: 'من الجدول الأسبوعي' },
-  { num: '03', title: 'أكدي الحجز', text: 'تأكيد فوري من الموقع' },
+  { num: '03', title: 'أرسلي الطلب', text: 'يصلنا مباشرة للاستوديو' },
 ];
 
 export default function Booking() {
   return (
     <section id="booking" className="section-padding relative overflow-hidden bg-soft">
-      <div className="pointer-events-none absolute -right-20 top-10 h-64 w-64 rounded-full bg-pink-radial opacity-50 blur-3xl" />
+      <motion.div className="pointer-events-none absolute -right-20 top-10 h-64 w-64 rounded-full bg-pink-radial opacity-50 blur-3xl" />
 
       <div className="container-page relative">
         <motion.div
@@ -21,10 +20,11 @@ export default function Booking() {
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <p className="text-sm font-black uppercase tracking-[0.35em] text-pink">الحجز أونلاين</p>
-          <h2 className="mt-4 text-4xl font-black sm:text-5xl">احجزي من الموقع مباشرة</h2>
+          <p className="text-sm font-black uppercase tracking-[0.35em] text-pink">طلب الحجز أونلاين</p>
+          <h2 className="mt-4 text-4xl font-black sm:text-5xl">قدّمي طلبك من الموقع</h2>
           <p className="mt-4 text-lg font-bold leading-8 text-black/60">
-            التسجيل والحجز عبر الموقع — بدون واتساب. بعد الحجز تُدار حصصك من لوحة التحكم.
+            اختاري البرنامج أو الحصة المناسبة وأرسلي طلبك. يصل الطلب إلى الاستوديو عبر لوحة التحكم،
+            ونتواصل معك لاحقاً لتأكيد التفاصيل وإتمام التسجيل.
           </p>
         </motion.div>
 
@@ -55,8 +55,20 @@ export default function Booking() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.12 }}
+          className="mx-auto mt-8 max-w-2xl rounded-2xl border border-pink/20 bg-pink/5 px-5 py-4 text-center"
+        >
+          <p className="text-sm font-bold leading-7 text-black/65">
+            بعد إرسال الطلب، فريق Shape Up يراجع طلبك ويتواصل معك لتأكيد الموعد وإكمال التسجيل.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="mx-auto mt-10 flex max-w-xl flex-col items-center gap-3 sm:flex-row sm:justify-center"
+          className="mx-auto mt-8 flex max-w-xl flex-col items-center gap-3 sm:flex-row sm:justify-center"
         >
           <Link
             to="pricing"
@@ -65,7 +77,7 @@ export default function Booking() {
             offset={-80}
             className="w-full cursor-pointer rounded-full bg-pink px-8 py-4 text-center text-sm font-black text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-pink-dark sm:w-auto"
           >
-            ابدئي الحجز
+            قدّمي طلب الحجز
           </Link>
           <Link
             to="schedule"
@@ -77,13 +89,6 @@ export default function Booking() {
             شوفي الجدول
           </Link>
         </motion.div>
-
-        <p className="mx-auto mt-8 max-w-md text-center text-sm font-bold text-black/45">
-          مسجّلة مسبقاً؟{' '}
-          <a href={dashboardUrl} className="text-pink underline-offset-2 hover:underline">
-            ادخلي لوحة التحكم
-          </a>
-        </p>
       </div>
     </section>
   );
