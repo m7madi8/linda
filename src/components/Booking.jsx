@@ -23,8 +23,7 @@ export default function Booking() {
           <p className="text-sm font-black uppercase tracking-[0.35em] text-pink">طلب الحجز أونلاين</p>
           <h2 className="mt-4 text-4xl font-black sm:text-5xl">قدّمي طلبك من الموقع</h2>
           <p className="mt-4 text-lg font-bold leading-8 text-black/60">
-            اختاري البرنامج أو الحصة المناسبة وأرسلي طلبك. يصل الطلب إلى الاستوديو عبر لوحة التحكم،
-            ونتواصل معك لاحقاً لتأكيد التفاصيل وإتمام التسجيل.
+            اختاري البرنامج أو الحصة وأرسلي طلبك — نستقبله ونتواصل معك لتأكيد التفاصيل.
           </p>
         </motion.div>
 
@@ -56,18 +55,6 @@ export default function Booking() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.12 }}
-          className="mx-auto mt-8 max-w-2xl rounded-2xl border border-pink/20 bg-pink/5 px-5 py-4 text-center"
-        >
-          <p className="text-sm font-bold leading-7 text-black/65">
-            بعد إرسال الطلب، فريق Shape Up يراجع طلبك ويتواصل معك لتأكيد الموعد وإكمال التسجيل.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.15 }}
           className="mx-auto mt-8 flex max-w-xl flex-col items-center gap-3 sm:flex-row sm:justify-center"
         >
           <Link
