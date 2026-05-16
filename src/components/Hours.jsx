@@ -45,7 +45,7 @@ export default function Hours() {
           viewport={{ once: true }}
           className="mx-auto mt-10 max-w-4xl rounded-[2rem] border border-pink/30 bg-pink/10 p-6 text-center shadow-glow"
         >
-          <p className="text-xl font-black">احجزي عبر التطبيق واضمني مكانك.</p>
+          <p className="text-xl font-black">احجزي من الموقع واضمني مكانك.</p>
         </motion.div>
       </div>
     </section>

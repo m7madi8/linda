@@ -1,32 +1,52 @@
+import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 
 const classes = [
-  { title: 'Tabata', icon: '💥', schedule: 'Mon/Wed 18:00', days: ['الإثنين', 'الأربعاء'], accent: 'حرق عالي' },
-  { title: 'HIIT', icon: '🚀', schedule: 'Thu 18:00, Sat 10:00', days: ['الخميس', 'السبت'], accent: 'قوة وسرعة' },
+  {
+    title: 'אירובי דאנס',
+    icon: '💃',
+    accent: 'ריקוד אירובי',
+    description: 'رقص إيروبي حماسي لحرق السعرات وتحسين اللياقة والمرونة.',
+    hebrew: true,
+  },
+  {
+    title: 'Tabata',
+    icon: '💥',
+    accent: 'حرق عالي',
+    description: 'جولات قصيرة مكثفة لرفع معدل الحرق وتحدي التحمل.',
+  },
+  {
+    title: 'HIIT',
+    icon: '🚀',
+    accent: 'قوة وسرعة',
+    description: 'تدريب متقطع عالي الشدة يجمع بين القوة والكارديو.',
+  },
   {
     title: 'Strong Station',
     icon: '🏋🏻‍♀️',
-    schedule: 'Daily 19:00 + Morning 10:00',
-    days: ['يومي', 'صباحي'],
     accent: 'محطات مقاومة',
+    description: 'محطات متنوعة لبناء القوة وشد العضلات بوتيرة جماعية.',
   },
   {
     title: 'עיצוב דינאמי',
     icon: '✨',
-    schedule: 'Tue 18:00',
-    days: ['שלישי', 'مسائي'],
     accent: 'עיצוב וחיטוב',
+    description: 'تمارين ديناميكية لنحت الجسم وتحسين الثبات والتحكم.',
     hebrew: true,
   },
   {
     title: 'ישבן ובטן',
     icon: '🎯',
-    schedule: 'Sun 18:00',
-    days: ['ראשון', 'مسائي'],
     accent: 'בטן וישבן',
+    description: 'تركيز على منطقة البطن والأرداف لنتائج واضحة ومتناسقة.',
     hebrew: true,
   },
-  { title: 'تدريب زوجي', icon: '🤝', schedule: 'by appointment', days: ['بموعد مسبق'], accent: 'متابعة شخصية' },
+  {
+    title: 'تدريب زوجي',
+    icon: '🤝',
+    accent: 'متابعة شخصية',
+    description: 'حصة خاصة لك ولصديقتك مع متابعة أدق وخطة مخصصة.',
+  },
 ];
 
 const cardVariants = {
@@ -48,12 +68,14 @@ export default function Classes() {
           <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-pink-radial blur-3xl" />
           <div className="relative max-w-2xl">
             <p className="text-sm font-black uppercase tracking-[0.35em] text-pink-light">تمارين الاستوديو</p>
-            <h2 className="mt-4 text-4xl font-black leading-tight sm:text-5xl">تمارين تشد، تحرق، وتقوّي</h2>
-            <p className="mt-4 text-lg font-bold leading-8 text-white/65">6 حصص متنوعة. هدف واضح. طاقة أعلى وجسم أقوى.</p>
+            <h2 className="mt-4 text-4xl font-black leading-tight sm:text-5xl">شو نوع التمرين؟</h2>
+            <p className="mt-4 text-lg font-bold leading-8 text-white/65">
+              هنا تعرفي ماذا تتوقعي من كل حصة. الأيام والأوقات في الجدول الأسبوعي بالأسفل.
+            </p>
           </div>
           <div className="relative mt-6 grid grid-cols-3 gap-3 text-center lg:mt-0 lg:min-w-72">
             <div className="rounded-2xl bg-white/10 p-4">
-              <p className="text-3xl font-black text-pink-light">6</p>
+              <p className="text-3xl font-black text-pink-light">7</p>
               <p className="text-xs font-black text-white/55">أنواع</p>
             </div>
             <div className="rounded-2xl bg-white/10 p-4">
@@ -93,16 +115,27 @@ export default function Classes() {
                   {item.accent}
                 </span>
               </div>
-              <p className="mt-4 text-base font-extrabold text-pink">{item.schedule}</p>
-              <div className="mt-auto flex flex-wrap gap-2 pt-5">
-                {item.days.map((day) => (
-                  <span key={day} className="rounded-full bg-white px-3.5 py-1.5 text-xs font-black text-black/60 shadow-sm">
-                    {day}
-                  </span>
-                ))}
-              </div>
+              <p className="mt-4 text-sm font-bold leading-7 text-black/65">{item.description}</p>
             </motion.article>
           ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          className="mt-8 text-center"
+        >
+          <Link
+            to="schedule"
+            smooth
+            duration={650}
+            offset={-80}
+            className="inline-flex cursor-pointer items-center justify-center rounded-full border-2 border-pink bg-pink/5 px-8 py-3.5 text-sm font-black text-pink transition hover:bg-pink hover:text-white"
+          >
+            شاهدي الجدول الأسبوعي — الأيام والأوقات
+          </Link>
         </motion.div>
       </div>
     </section>

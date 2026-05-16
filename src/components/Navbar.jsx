@@ -1,12 +1,13 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { whatsappUrl } from '../App.jsx';
+import BookLink from './BookLink.jsx';
 import logoPink from '../../logo-pink.png';
 
 const navLinks = [
   { label: 'تمارين', to: 'classes' },
   { label: 'الجدول', to: 'schedule' },
   { label: 'أسعار', to: 'pricing' },
+  { label: 'حجز', to: 'booking' },
   { label: 'الفريق', to: 'about' },
 ];
 
@@ -51,15 +52,12 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="سجلي الآن عبر واتساب"
+        <BookLink
+          aria-label="احجزي من الموقع"
           className="rounded-full bg-pink px-5 py-3 text-sm font-black text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-pink-dark hover:shadow-glow-lg sm:px-7"
         >
-          سجّلي الآن
-        </a>
+          احجزي الآن
+        </BookLink>
       </nav>
     </motion.header>
   );

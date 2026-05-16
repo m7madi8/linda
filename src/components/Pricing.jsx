@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { whatsappUrl } from '../App.jsx';
+import BookLink from './BookLink.jsx';
 
 const plans = [
   { name: '1x/week', monthly: '₪200/mo', term: '3mo: ₪600', featured: false },
@@ -58,19 +58,16 @@ export default function Pricing() {
                   <li>تسجيل سريع</li>
                 </ul>
               </div>
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`اختيار خطة ${plan.name}`}
+              <BookLink
+                aria-label={`حجز خطة ${plan.name}`}
                 className={`mt-auto block rounded-full px-6 py-4 text-center font-black transition ${
                   plan.featured
                     ? 'bg-pink text-white hover:bg-pink-dark'
                     : 'bg-ink text-white hover:bg-pink hover:shadow-glow'
                 }`}
               >
-                ابدئي الآن
-              </a>
+                احجزي الآن
+              </BookLink>
             </motion.article>
           ))}
         </motion.div>

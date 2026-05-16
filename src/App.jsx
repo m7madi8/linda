@@ -7,6 +7,7 @@ import TrainersIntro from './components/TrainersIntro.jsx';
 import Classes from './components/Classes.jsx';
 import Schedule from './components/Schedule.jsx';
 import Pricing from './components/Pricing.jsx';
+import Booking from './components/Booking.jsx';
 import FreeEntry from './components/FreeEntry.jsx';
 import Payment from './components/Payment.jsx';
 import Hours from './components/Hours.jsx';
@@ -16,6 +17,8 @@ import Footer from './components/Footer.jsx';
 export const whatsappUrl = 'https://wa.me/972523369262';
 export const instagramUrl = 'https://www.instagram.com/shape_up_by_linda';
 export const phoneDisplay = '052-3369262';
+/** رابط لوحة التحكم — حدّثيه عند ربط النظام */
+export const dashboardUrl = '/dashboard';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -43,6 +46,7 @@ export default function App() {
         <Classes />
         <Schedule />
         <Pricing />
+        <Booking />
         <FreeEntry />
         <Payment />
         <Hours />
